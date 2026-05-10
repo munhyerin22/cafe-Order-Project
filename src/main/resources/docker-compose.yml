@@ -1,0 +1,23 @@
+# 로컬 개발 환경용 인프라
+# 사용법: docker compose up -d
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: cafe-mysql
+    ports:
+      - "3306:3306"       # 호스트 3306 → 컨테이너 3306
+    environment:
+      MYSQL_DATABASE: coffee_order    # 앱 시작 시 이 DB를 자동 생성
+      MYSQL_ROOT_PASSWORD: password   # application.yml의 password와 동일해야 함
+    volumes:
+      - mysql_data:/var/lib/mysql     # 컨테이너 재시작해도 데이터 보존
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  mysql_data:   # Docker가 관리하는 영구 저장소

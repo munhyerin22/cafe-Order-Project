@@ -1,0 +1,13 @@
+# ─────────────────────────────────────────────────────────────────
+# local 프로파일 (로컬 개발 환경)
+# ─────────────────────────────────────────────────────────────────
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/coffee_order?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
