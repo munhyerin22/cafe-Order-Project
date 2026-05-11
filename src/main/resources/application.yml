@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update          # 엔티티 변경 시 테이블 자동 반영 (컬럼 추가 O, 삭제 X)
+      ddl-auto: create          # 엔티티 변경 시 테이블 자동 반영 (컬럼 추가 O, 삭제 X)
     properties:
       hibernate:
         format_sql: true        # 실행 SQL을 보기 좋게 들여쓰기

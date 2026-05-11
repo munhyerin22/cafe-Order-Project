@@ -31,7 +31,7 @@ public class UserService {
 
         User user = User.builder()
                 .phone(request.phone())
-                .pin(request.pin())
+                .pin(encodedPin)
                 .build();
 
         User savedUser = userRepository.save(user);
