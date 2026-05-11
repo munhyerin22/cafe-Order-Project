@@ -24,7 +24,10 @@ public enum ErrorCode {
     INSUFFICIENT_POINT(HttpStatus.BAD_REQUEST, "INSUFFICIENT_POINT", "포인트가 부족합니다."),
     //INVALID_CHARGE_AMOUNT(HttpStatus.BAD_REQUEST, "INVALID_CHARGE_AMOUNT", "허용되지 않는 충전 단위 입니다."),
     POINT_LIMIT_EXCEEDED(HttpStatus.BAD_REQUEST, "POINT_LIMIT_EXCEEDED", "최대 보유 가능 포인트는 200,000P 입니다."),
-    INVALID_REFUND_AMOUNT(HttpStatus.BAD_REQUEST, "INVALID_REFFUND_AMOUNT", "환불은 10,000P단위로 가능합니다.");
+    INVALID_REFUND_AMOUNT(HttpStatus.BAD_REQUEST, "INVALID_REFFUND_AMOUNT", "환불은 10,000P단위로 가능합니다."),
+
+    // -- 사용자 정보 변경 ------------------------------------------------------
+    SAME_PHONE(HttpStatus.CONFLICT, "SAME_PHONE", "현재와 동일한 전화번호 입니다.");
 
     private final HttpStatus httpStatus;
     private final String code;

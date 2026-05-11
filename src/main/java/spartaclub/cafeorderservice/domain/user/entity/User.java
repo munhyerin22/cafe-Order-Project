@@ -52,4 +52,9 @@ public class User extends BaseEntity {
     public void updatePhone(String newPhone) {
         this.phone = newPhone;
     }
+
+    // PIN 변경: 이미 암호화된 새 PIN 값을 받아서 저장
+    public void updatePin(String encodedNewPin) {
+        this.pin = encodedNewPin;
+    }
 }

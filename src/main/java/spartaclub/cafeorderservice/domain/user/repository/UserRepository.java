@@ -12,4 +12,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // 전화번호로 사용자 찾기 (로그인 중복 체크에 사용)
     Optional<User> findByPhone(String phone);
+
+    // uuid로 사용자 찾기 (JWT 필터에서 사용) ← 이 줄 추가!
+    Optional<User> findByUuid(String uuid);
 }
