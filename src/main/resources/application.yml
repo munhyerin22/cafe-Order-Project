@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update          # 엔티티 변경 시 테이블 자동 반영 (컬럼 추가 O, 삭제 X)
+      ddl-auto: create          # 엔티티 변경 시 테이블 자동 반영 (컬럼 추가 O, 삭제 X)
     properties:
       hibernate:
         format_sql: true        # 실행 SQL을 보기 좋게 들여쓰기
@@ -22,8 +22,9 @@ logging:
     org.hibernate.SQL: debug
     org.hibernate.orm.jdbc.bind: trace
 
-# Swagger UI 접근 경로
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-
+# JWT 설정
+jwt:
+  # 토큰 서명에 사용할 비밀키
+  secret: "my-super-secret-key-for-jwt-signing-must-be-long-enough"
+  # Access Token 만료 시간: 3600000ms = 1시간
+  expiration: 3600000

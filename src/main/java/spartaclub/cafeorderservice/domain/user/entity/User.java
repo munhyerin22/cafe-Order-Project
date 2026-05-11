@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import spartaclub.cafeorderservice.domain.BaseEntity;
 
+import java.util.UUID;
+
 @Getter
 @NoArgsConstructor
 @Entity
@@ -15,6 +17,9 @@ public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, unique = true, updatable = false)
+    private String uuid;
 
     @Column(nullable = false, unique = true)
     private String phone;
@@ -27,19 +32,23 @@ public class User extends BaseEntity {
 
     @Builder
     private User(String phone, String pin) {
+        this.uuid = UUID.randomUUID().toString();
         this.phone = phone;
         this.pin = pin;
         this.point = 0L;
     }
 
+    // 포인트 충전
     public void chargePoint(Long amount) {
         this.point += amount;
     }
 
+    // 포인트 차감
     public void deductPoint(Long amount) {
         this.point -= amount;
     }
 
+    // 전화번호 변경
     public void updatePhone(String newPhone) {
         this.phone = newPhone;
     }

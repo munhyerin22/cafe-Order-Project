@@ -10,6 +10,7 @@ public enum ErrorCode {
 
     // -- 인증 -----------------------------------------------------------------
     INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "INVALID_TOKEN", "유효하지 않는 토큰입니다."),
+    AUTH_FAILED(HttpStatus.UNAUTHORIZED, "AUTH_FAILED", "전화번호 또는 PIN이 올바르지 않습니다."),
 
     // -- 사용자 ---------------------------------------------------------------
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER_NOT_FOUND", "존재하지 않는 사용자 입니다."),

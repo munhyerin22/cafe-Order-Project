@@ -9,6 +9,7 @@ public record SignupResponse(
 ) {
     
     public static SignupResponse from(User user) {
+
         return new SignupResponse(user.getId(), user.getPhone());
     }
 }
