@@ -20,7 +20,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/signuq")
+    @PostMapping("/signup")
     public ResponseEntity<ApiResponse<SignupResponse>> signup(
             @RequestBody @Valid SignupRequest request) {
         SignupResponse response = userService.signup(request);
