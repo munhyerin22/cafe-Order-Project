@@ -13,8 +13,8 @@ import spartaclub.cafeorderservice.common.response.ApiResponse;
 public class GlobalExceptionHandler {
 
     // 직접 던질 비즈니스 예외 처리
-    @ExceptionHandler(BusinessException.class)
-    public ResponseEntity<ApiResponse<Void>> handleBusinessException(BusinessException e) {
+    @ExceptionHandler(CustomException.class)
+    public ResponseEntity<ApiResponse<Void>> handleBusinessException(CustomException e) {
         ErrorCode errorCode = e.getErrorCode();
         log.error("[BusinessException] code={}, message={}", errorCode.getCode(), e.getMessage());
 

@@ -30,9 +30,6 @@ dependencies {
     // -- Spring Security ---------------------------------------
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
-    // -- Swagger (API 문서 자동화) ------------------------------
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8'
-
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     // -- Lombok (반복 코드 제거) --------------------------------
@@ -50,7 +47,3 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-    forkEvery = 0
-}
