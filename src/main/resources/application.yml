@@ -22,8 +22,9 @@ logging:
     org.hibernate.SQL: debug
     org.hibernate.orm.jdbc.bind: trace
 
-# Swagger UI 접근 경로
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-
+# JWT 설정
+jwt:
+  # 토큰 서명에 사용할 비밀키
+  secret: "my-super-secret-key-for-jwt-signing-must-be-long-enough"
+  # Access Token 만료 시간: 3600000ms = 1시간
+  expiration: 3600000
