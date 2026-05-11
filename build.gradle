@@ -31,7 +31,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
     // -- Swagger (API 문서 자동화) ------------------------------
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.12.0'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
@@ -50,7 +50,3 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-    forkEvery = 0
-}
